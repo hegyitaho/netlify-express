@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es2019",
+    "jsx": "preserve",
+    "checkJs": true,
+    "baseUrl": "./src",  
+     "paths": {
+      "^src/(.*)$": ["./src/*"],
+      "^test/(.*)$": ["./test/*"],
+      "^test-resources/(.*)$": ["./test-resources/*"],
+   },
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}
