@@ -5,6 +5,7 @@ import {join} from 'path'
 import serverless from 'serverless-http'
 import {json} from 'body-parser'
 import {getSiteMenu} from 'src/scraping/beresalexandra/converted-menu'
+import {FoodData} from '^src/(.scraping/beresalexandra/utils/FoodData)$'
 const app = express()
 
 const router = Router()
@@ -24,7 +25,7 @@ app.use('/', (req, res) => res.sendFile(join(__dirname, '../index.html')))
 export default app
 export const handler = serverless(app)
 
-let currentMenu, nextMenu
+let currentMenu, nextMenu: FoodData[]
 
 async function beresalexandraCurrentMenu() {
   if (!currentMenu) {
