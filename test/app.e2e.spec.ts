@@ -3,11 +3,15 @@ import request from 'supertest'
 import Joi from '@hapi/joi'
 import {FoodType} from '../src/scraping/beresalexandra/utils/conversion'
 import app from '../src/express/server'
+import {Server} from 'http'
 
 describe('AppController (e2e)', () => {  
-  let server
+  let server: Server
   beforeEach(async () => {
     server = app.listen()
+  })
+  afterEach(() => {
+    server.close()
   })
 
   it('beresalexandra returns food data for current week', () => {
