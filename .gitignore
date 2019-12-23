@@ -43,3 +43,5 @@ dist
 out/
 
 functions-build/
+
+lambda/

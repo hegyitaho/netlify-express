@@ -6,7 +6,7 @@ import serverless from 'serverless-http'
 import {json} from 'body-parser'
 import {getSiteMenu} from '../scraping/beresalexandra/converted-menu'
 import {FoodData} from '../scraping/beresalexandra/utils/FoodData'
-import {loadBeresAlexandraTestDouble, dummyFoodDataForAWeek} from '../scraping/beresalexandra/utils/test-utils'
+import {dummyFoodDataForAWeek} from '../scraping/beresalexandra/utils/test-utils'
 
 export const app = express()
 
@@ -25,7 +25,7 @@ beresalexandra.get('/next', async (req, res) => res.json(await beresalexandraNex
 beresalexandra.get('/dummy', async (req, res) => res.json(await dummyFoodDataForAWeek()))
 
 app.use(json())
-app.use('/.netlify/functions/server', router)  // path must route to lambda
+app.use('/.netlify/functions', router)  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(join(__dirname, './index.html')))
 
 export const handler = serverless(app)
