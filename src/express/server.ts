@@ -16,10 +16,12 @@ router.get('/', (req, res) => {
   res.write('<h1>Hello from Express.js!</h1>')
   res.end()
 })
-router.get('/beresalexandra/current', async (req, res) => res.json(await beresalexandraCurrentMenu()))
-router.get('/beresalexandra/next', async (req, res) => res.json(await beresalexandraNextMenu()))
-router.get('/beresalexandra/dummy', async (req, res) => res.json(loadBeresAlexandraTestDouble()))
-router.post('/', (req, res) => res.json({postBody: req.body}))
+
+const beresalexandra = Router()
+app.use('/beresalexandra', beresalexandra)
+beresalexandra.get('/current', async (req, res) => res.json(await beresalexandraCurrentMenu()))
+beresalexandra.get('/next', async (req, res) => res.json(await beresalexandraNextMenu()))
+beresalexandra.get('/dummy', async (req, res) => res.json(loadBeresAlexandraTestDouble()))
 
 app.use(json())
 app.use('/.netlify/functions/server', router)  // path must route to lambda
