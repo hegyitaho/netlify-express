@@ -4,8 +4,8 @@ import express, {Router} from 'express'
 import {join} from 'path'
 import serverless from 'serverless-http'
 import {json} from 'body-parser'
-import {getSiteMenu} from 'src/scraping/beresalexandra/converted-menu'
-import {FoodData} from '^src/(.scraping/beresalexandra/utils/FoodData)$'
+import {getSiteMenu} from '../scraping/beresalexandra/converted-menu'
+import {FoodData} from '../scraping/beresalexandra/utils/FoodData'
 const app = express()
 
 const router = Router()

@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
     "lint-fix": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix",
-    "build": "netlify-lambda build src/express",
+    "build": "netlify-lambda build dist/express",
     "start": "nodemon server-local.js",
     "test": "jest"
   },
@@ -52,7 +52,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "jest": "^24.9.0",
     "nodemon": "^1.19.2",
-    "prettier": "^1.19.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "supertest": "^4.0.2",

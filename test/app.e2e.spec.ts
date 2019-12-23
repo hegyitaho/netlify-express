@@ -1,8 +1,8 @@
 /* eslint-disable jest/expect-expect */
 import request from 'supertest'
 import Joi from '@hapi/joi'
-import {FoodType} from 'src/scraping/beresalexandra/utils/conversion'
-import app from '^src/(.express/server)$'
+import {FoodType} from '../src/scraping/beresalexandra/utils/conversion'
+import app from '../src/express/server'
 
 describe('AppController (e2e)', () => {  
   let server
