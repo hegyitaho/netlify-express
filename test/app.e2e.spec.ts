@@ -2,7 +2,7 @@
 import request from 'supertest'
 import Joi from '@hapi/joi'
 import {FoodType} from '../src/scraping/beresalexandra/utils/conversion'
-import app from '../src/express/server'
+import {app} from '../src/express/server'
 import {Server} from 'http'
 
 describe('AppController (e2e)', () => {  

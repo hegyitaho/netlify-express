@@ -39,3 +39,5 @@ jspm_packages
 functions
 .history
 dist
+
+out/

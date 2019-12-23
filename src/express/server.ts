@@ -6,7 +6,8 @@ import serverless from 'serverless-http'
 import {json} from 'body-parser'
 import {getSiteMenu} from '../scraping/beresalexandra/converted-menu'
 import {FoodData} from '../scraping/beresalexandra/utils/FoodData'
-const app = express()
+
+export const app = express()
 
 const router = Router()
 router.get('/', (req, res) => {
@@ -22,7 +23,6 @@ app.use(json())
 app.use('/.netlify/functions/server', router)  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(join(__dirname, '../index.html')))
 
-export default app
 export const handler = serverless(app)
 
 let currentMenu, nextMenu: FoodData[]
