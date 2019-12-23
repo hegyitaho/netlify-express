@@ -23,7 +23,7 @@ router.post('/', (req, res) => res.json({postBody: req.body}))
 
 app.use(json())
 app.use('/.netlify/functions/server', router)  // path must route to lambda
-app.use('/', (req, res) => res.sendFile(join(__dirname, '../index.html')))
+app.use('/', (req, res) => res.sendFile(join(__dirname, './index.html')))
 
 export const handler = serverless(app)
 
