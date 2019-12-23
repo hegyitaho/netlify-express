@@ -41,3 +41,5 @@ functions
 dist
 
 out/
+
+functions-build/
