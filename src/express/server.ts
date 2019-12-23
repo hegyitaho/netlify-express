@@ -6,7 +6,7 @@ import serverless from 'serverless-http'
 import {json} from 'body-parser'
 import {getSiteMenu} from '../scraping/beresalexandra/converted-menu'
 import {FoodData} from '../scraping/beresalexandra/utils/FoodData'
-import {loadBeresAlexandraTestDouble} from '../scraping/beresalexandra/utils/test-utils'
+import {loadBeresAlexandraTestDouble, dummyFoodDataForAWeek} from '../scraping/beresalexandra/utils/test-utils'
 
 export const app = express()
 
@@ -18,10 +18,11 @@ router.get('/', (req, res) => {
 })
 
 const beresalexandra = Router()
-app.use('/beresalexandra', beresalexandra)
+router.use('/beresalexandra', beresalexandra)
+beresalexandra.get('/', (req, res) => res.send('hello!!!!!!!!!!!!!!!'))
 beresalexandra.get('/current', async (req, res) => res.json(await beresalexandraCurrentMenu()))
 beresalexandra.get('/next', async (req, res) => res.json(await beresalexandraNextMenu()))
-beresalexandra.get('/dummy', async (req, res) => res.json(loadBeresAlexandraTestDouble()))
+beresalexandra.get('/dummy', async (req, res) => res.json(await dummyFoodDataForAWeek()))
 
 app.use(json())
 app.use('/.netlify/functions/server', router)  // path must route to lambda

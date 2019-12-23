@@ -14,18 +14,25 @@ describe('AppController (e2e)', () => {
     server.close()
   })
 
-  it('beresalexandra returns food data for current week', () => {
-    return request(server)
+  it('beresalexandra returns food data for current week', async () => {
+    const {body} = await request(server)
       .get('/.netlify/functions/server/beresalexandra/current')
       .expect(200)
-      .then(({body}) => responseSchema.validateAsync(body))
+    return await responseSchema.validateAsync(body)
   })
 
-  it('beresalexandra returns food data for next week', () => {
-    return request(server)
+  it('beresalexandra returns food data for next week', async () => {
+    const {body} = await request(server)
       .get('/.netlify/functions/server/beresalexandra/next')
       .expect(200)
-      .then(({body}) => responseSchema.validateAsync(body))
+    return await responseSchema.validateAsync(body)
+  })
+
+  it('beresalexandra test resource has same schema as current and next', async () => {
+    const {body} = await request(server)
+      .get('/.netlify/functions/server/beresalexandra/dummy')
+      .expect(200)
+    return await responseSchema.validateAsync(body)
   })
 })
 

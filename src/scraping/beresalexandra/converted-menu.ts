@@ -12,7 +12,7 @@ export function loadSite(body: string | Buffer): CheerioStatic {
   return cheerio.load(body)
 }
 
-export async function getSiteMenu({next = false} = {}) {
+export function getSiteMenu({next = false} = {}) {
   return rawSiteContent(next)
     .then(loadSite)
     .then(menu)
