@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
     "lint-fix": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix",
-    "build": "tsc && cp src/express/index.html dist/express/index.html && netlify-lambda build dist/express",
+    "build": "tsc && cp src/express/index.html dist/functions && netlify-lambda build dist/express",
     "start": "nodemon server-local.js",
     "test": "jest"
   },
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.7.7",
     "@hapi/joi": "^16.1.8",
+    "@types/aws-lambda": "^8.10.39",
     "@types/cheerio": "^0.22.15",
     "@types/express": "^4.17.2",
     "@types/hapi__joi": "^16.0.4",
