@@ -1,11 +1,11 @@
-import {loadBeresAlexandraBody} from 'src/scraping/beresalexandra/utils/test-utils'
+import {loadBeresAlexandraTestDouble} from 'src/scraping/beresalexandra/utils/test-utils'
 import {fozelekSelectorsForTheWeek, fozelekDishes} from './fozelek'
 
 
 describe('fozelek', () => {
   let $: CheerioStatic
   beforeAll(() => {
-    $ = loadBeresAlexandraBody()
+    $ = loadBeresAlexandraTestDouble()
   })
   test('fozelek selectors', () => {
     expect(fozelekSelectorsForTheWeek()).toEqual([

@@ -2,12 +2,12 @@ import {
   startOfWeek, convertToFoodData, FoodType, getTextForFoodTypeForWeek,
 } from './conversion'
 import {fozelekSelectorsForTheWeek} from 'src/scraping/beresalexandra/food-types/fozelek'
-import {loadBeresAlexandraBody} from 'src/scraping/beresalexandra/utils/test-utils'
+import {loadBeresAlexandraTestDouble} from 'src/scraping/beresalexandra/utils/test-utils'
 
 describe('conversion utils', () => {
   let $: CheerioStatic
   beforeAll(() => {
-    $ = loadBeresAlexandraBody()
+    $ = loadBeresAlexandraTestDouble()
   })
   test('start date of the week parsed correctly', () => {
     const startDate = startOfWeek($)

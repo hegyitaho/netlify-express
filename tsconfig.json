@@ -12,12 +12,7 @@
     "outDir": "./out",
     "baseUrl": "./",
     "incremental": true,
-    "paths": {
-      "^src/(.*)$": ["./src/*"],
-      "^test/(.*)$": ["./test/*"],
-      "^test-resources/(.*)$": ["./test-resources/*"],
-   },
-   "esModuleInterop": true
+    "esModuleInterop": true
   },
   "include": ["src"]
 }

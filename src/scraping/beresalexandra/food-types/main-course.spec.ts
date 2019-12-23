@@ -1,11 +1,11 @@
-import {loadBeresAlexandraBody} from 'src/scraping/beresalexandra/utils/test-utils'
+import {loadBeresAlexandraTestDouble} from 'src/scraping/beresalexandra/utils/test-utils'
 import {mainCourseSelectorsForTheWeek, mainCourseDishes} from './main-course'
 import * as R from 'ramda'
 
 describe('main course', () => {
   let $: CheerioStatic
   beforeAll(() => {
-    $ = loadBeresAlexandraBody()
+    $ = loadBeresAlexandraTestDouble()
   })
   test('main course selectors', () => {
     expect(mainCourseSelectorsForTheWeek()).toEqual(

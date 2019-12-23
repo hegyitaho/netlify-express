@@ -1,10 +1,10 @@
 import {fozelek, mainCourse} from './converted-menu'
-import {loadBeresAlexandraBody} from './utils/test-utils'
+import {loadBeresAlexandraTestDouble} from './utils/test-utils'
 
 describe('beresalexandra integration', () => {
   let $: CheerioStatic
   beforeAll(() => {
-    $ = loadBeresAlexandraBody()
+    $ = loadBeresAlexandraTestDouble()
   })
   test('fozelek food data from site', () => {
     expect(fozelek($)).toEqual([

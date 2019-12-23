@@ -6,6 +6,7 @@ import serverless from 'serverless-http'
 import {json} from 'body-parser'
 import {getSiteMenu} from '../scraping/beresalexandra/converted-menu'
 import {FoodData} from '../scraping/beresalexandra/utils/FoodData'
+import {loadBeresAlexandraTestDouble} from 'src/scraping/beresalexandra/utils/test-utils'
 
 export const app = express()
 
@@ -17,6 +18,7 @@ router.get('/', (req, res) => {
 })
 router.get('/beresalexandra/current', async (req, res) => res.json(await beresalexandraCurrentMenu()))
 router.get('/beresalexandra/next', async (req, res) => res.json(await beresalexandraNextMenu()))
+router.get('/beresalexandra/dummy', async (req, res) => res.json(loadBeresAlexandraTestDouble()))
 router.post('/', (req, res) => res.json({postBody: req.body}))
 
 app.use(json())
