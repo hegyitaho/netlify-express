@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
     "lint-fix": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix",
-    "build": "tsc && cp src/express/index.html dist/functions && netlify-lambda build dist/express",
+    "build": "tsc && cp src/express/index.html dist/functions && netlify-lambda build dist/functions",
     "start": "nodemon server-local.js",
     "test": "jest"
   },
