@@ -6,7 +6,7 @@ import serverless from 'serverless-http'
 import {json} from 'body-parser'
 import {getSiteMenu} from '../scraping/beresalexandra/converted-menu'
 import {FoodData} from '../scraping/beresalexandra/utils/FoodData'
-import {loadBeresAlexandraTestDouble} from 'src/scraping/beresalexandra/utils/test-utils'
+import {loadBeresAlexandraTestDouble} from '../scraping/beresalexandra/utils/test-utils'
 
 export const app = express()
 
