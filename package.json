@@ -29,7 +29,7 @@
     "encoding": "^0.1.12",
     "express": "^4.17.1",
     "netlify-lambda": "^1.6.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "ramda": "^0.26.1",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.8",
